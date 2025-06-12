@@ -1,0 +1,105 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+using Linq.Data;
+
+namespace Linq.MetodiHelper
+{
+    public class MetodiLinq
+    {
+        public static List<Film> GetMoviesBefore2000(List<Film> list)
+        {
+            var searcFilmByYears = list.Where(a => a.Year < 2000).OrderBy(a => a.Year).ToList();
+            return searcFilmByYears;
+
+        }
+
+        //2)
+        //Valutazione media dei film di genere “Sci-Fi”.
+        //Metodo: double AverageSciFiRating(List<Film> films).
+        //Hint: Where + Average.
+
+        public static double AverageSciFiRating(List<Film> list)
+        {
+            var valutazione = list.Where(x => x.Genre.Equals("Sci-Fi")).Sum(z => z.Rating);
+            var FilmScifi = list.Where(x => x.Genre.Equals("Sci-Fi"));
+            int count = 0;
+            foreach (var film in FilmScifi)
+            {
+                count++;
+            }
+            return valutazione/count;
+
+         
+        }
+        //3)
+        //Il film con voto più alto per ogni genere.
+        //Metodo: List<Film> BestMoviePerGenre(List<Film> films).
+        //Hint: GroupBy → OrderByDescending(Rating).First().
+        public static List<Film> BestMoviePerGenre(List<Film> films)
+        {
+            var filmPerGenere= films.OrderByDescending(x => x.Rating).GroupBy(x=> x.Genre).ToList();
+            
+            var list = new List<Film>();
+
+            foreach (var film in films) 
+            {
+                list.Add(film); 
+            }
+            return list;
+            
+        }
+        //4)
+        //Registi con più di un film nella lista, in ordine alfabetico.
+        //Metodo: List<string> DirectorsWithMultipleMovies(List<Film> films).
+        //Hint: GroupBy(Director) + Where(g.Count()>1).
+
+        public static List<string> DirectorsWithMultipleMovies(List<Film> films)
+        {
+            return films.GroupBy(f => f.Director).Where(g => g.Count() > 1).Select(g => g.Key).OrderBy(d => d).ToList();                 
+        }
+
+        //5)
+        //Titoli più lunghi di 15 caratteri, restituiti in maiuscolo.
+        //Metodo: List<string> LongTitlesUpper(List<Film> films).
+        //Hint: Select(f => f.Title.ToUpper()).
+
+        public static List<string> LongTitlesUpper(List<Film> films)
+        {
+             var filmConTitoloConPiuDi15Caratteri = films.Select(x=> x.Title.ToUpper()).Where(t=> t.Length > 15).ToList();
+            return filmConTitoloConPiuDi15Caratteri;
+        }
+
+        //6)
+        //Raggruppa i film per decennio (anni ’70, ’80, ’90, …) e conta quanti film ci sono per decennio.
+        //Metodo: Dictionary<int,int> CountByDecade(List<Film> films).
+        //Hint: chiave = Year/10*10.
+
+        public static Dictionary<int, int> CountByDecade(List<Film> films)
+        {
+            var CountByDecade = films.Select(x => x.Year/10*10).GroupBy(x=> x).Count();
+          
+            foreach (var item in films) 
+            {
+                
+                          
+            }
+
+           
+            foreach (var item in films)
+            {
+                int anno = item.Year / 10 * 10;
+                
+            }
+
+
+            
+
+        }
+    }
+}

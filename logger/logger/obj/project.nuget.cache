@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "18l9YKb1Q/c=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Coros05\\Desktop\\logger\\logger\\logger.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Coros05\\.nuget\\packages\\serilog\\4.3.0\\serilog.4.3.0.nupkg.sha512",
+    "C:\\Users\\Coros05\\.nuget\\packages\\serilog.sinks.file\\7.0.0\\serilog.sinks.file.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

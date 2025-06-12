@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: red;
+}
+#NavBar {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+}
+#NavBarUl {
+  list-style: none;
+}
+.NavBarButton {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: none;
+  background-color: rgb(250, 109, 133);
+  color: white;
+  height: 27px;
+  width: 70px;
+}
+.buttonList {
+  display: inline;
+  position: relative;
+  top: 5%;
+  right: -200%;
+}
+#tilteLink {
+  margin-block: 0%;
+  position: absolute;
+  top: 9%;
+}
+#Card {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 650px;
+  height: 650px;
+  top: 15%;
+  left: 30%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 5;
+}
+#Pizza {
+  height: 100px;
+  order: 1;
+  position: fixed;
+  top: 19%;
+  left: 33%;
+}
+#titleRecipes {
+  order: 2;
+  position: fixed;
+  left: 42%;
+  top: 22%;
+  font-size: xx-large;
+}
+#Rating {
+  order: 3;
+  position: fixed;
+  left: 42%;
+  top: 28%;
+}
+#tag1 {
+  order: 4;
+  width: 75px;
+  height: 25px;
+  background-color: salmon;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  position: fixed;
+  right: 43%;
+  top: 28%;
+  font-size: small;
+  align-items: center;
+}
+#tag2 {
+  order: 4;
+  width: 75px;
+  height: 25px;
+  background-color: salmon;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  position: fixed;
+  right: 38%;
+  top: 28%;
+  font-size: small;
+}
+#orangeComponent {
+  background-color: rgb(255, 157, 46);
+  order: 5;
+  height: 250px;
+  width: 550px;
+  z-index: 2;
+  position: fixed;
+  top: 35%;
+  left: 33%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#ingredientsTitle {
+  text-decoration: underline;
+  font-size: large;
+  position: fixed;
+  left: 34%;
+  top: 36%;
+}
+#infoTitle {
+  text-decoration: underline;
+  font-size: large;
+  position: fixed;
+  top: 36%;
+  right: 48%;
+}
+#igredientsList {
+  order: 6;
+  position: fixed;
+  top: 40%;
+  left: 35%;
+}
+
+#infoList {
+  order: 6;
+  list-style-type: none;
+  position: fixed;
+  left: 50%;
+  width: 245px;
+  top: 39%;
+}
+#infoList.li {
+  text-align: justify;
+  align-items: center;
+}
+#istrutcionsList {
+  position: fixed;
+  height: auto;
+  width: auto;
+  top: 68%;
+  left: 34%;
+}
+#istructionTitle {
+  text-decoration: underline;
+  font-size: large;
+  position: fixed;
+  top: 65%;
+  left: 33%;
+}
+#linea {
+  background-color: black;
+  height: 2px;
+  position: fixed;
+  width: 600px;
+  z-index: 100;
+  top: 33%;
+  left: 31%;
+}

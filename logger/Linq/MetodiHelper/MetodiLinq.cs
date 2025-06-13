@@ -82,9 +82,7 @@ namespace Linq.MetodiHelper
 
         public static Dictionary<int, int> CountByDecade(List<Film> films)
         {
-            return films
-                .GroupBy(f => f.Year / 10 * 10)
-                .ToDictionary(g => g.Key, g => g.Count());
+            return films.GroupBy(f => f.Year / 10 * 10).ToDictionary(g => g.Key, g => g.Count());
         }
         //7)
         //Top N film per voto (parametrico).
@@ -109,12 +107,9 @@ namespace Linq.MetodiHelper
         //Metodo: IDictionary<string,double> AveragePerDirector(List<Film> films).
         public static Dictionary<string, double> AveragePerDirector(List<Film> films)
         {
-            return films
-                .GroupBy(f => f.Director)
-                .ToDictionary(g => g.Key, g => g.Average(f => f.Rating))
-                .OrderByDescending(kvp => kvp.Value)
-                .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+            return films.GroupBy(f => f.Director).ToDictionary(g => g.Key, g => g.Average(f => f.Rating)).OrderByDescending(kvp => kvp.Value).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
         }
+
     }
 
 }

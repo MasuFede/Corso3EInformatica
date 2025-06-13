@@ -86,5 +86,35 @@ namespace Linq.MetodiHelper
                 .GroupBy(f => f.Year / 10 * 10)
                 .ToDictionary(g => g.Key, g => g.Count());
         }
+        //7)
+        //Top N film per voto (parametrico).
+        //Metodo: List<Film> TopRated(List<Film> films, int n = 5).
+        //Hint: OrderByDescending(Rating).Take(n).
+
+        public static List<Film> TopRated(List<Film> films, int n = 5)
+        {
+            return films.OrderByDescending(f => f.Rating).Take(n).ToList();
+        }
+
+        //8)
+        //Esiste almeno un film con voto < 8?
+        //Metodo: bool HasLowRated(List<Film> films, double threshold = 8.0).
+        //Hint: Any.
+        public static bool HasLowRated(List<Film> films, double threshold = 8.0)
+        {
+            return films.Any(f => f.Rating < threshold);
+        }
+        //9)
+        //Produci un dizionario Director → media voti dei suoi film, ordinato per media desc.
+        //Metodo: IDictionary<string,double> AveragePerDirector(List<Film> films).
+        public static Dictionary<string, double> AveragePerDirector(List<Film> films)
+        {
+            return films
+                .GroupBy(f => f.Director)
+                .ToDictionary(g => g.Key, g => g.Average(f => f.Rating))
+                .OrderByDescending(kvp => kvp.Value)
+                .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+        }
     }
+
 }

@@ -53,3 +53,32 @@ foreach(var item in filmConTitoliLunghi)
 {
     Console.WriteLine(item);
 }
+Dictionary<int,int> filmPerAnno = MetodiLinq.CountByDecade(Films);
+
+Console.WriteLine("Numero di film per decennio:");
+foreach (var kvp in filmPerAnno)
+{
+    Console.WriteLine($"Decennio {kvp.Key}s: {kvp.Value} film");
+}
+List<Film> listFilmVotazione = MetodiLinq.TopRated(Films, 5);
+Console.WriteLine("I film con la votazione più alta sono: ");
+foreach (var film in listFilmVotazione)
+{
+    Console.WriteLine($"{film.Title} - {film.Rating}");
+}
+if(MetodiLinq.HasLowRated(Films,8  )== true)
+{
+    Console.WriteLine("Ci sono film con votazione inferiore a 8");
+}
+else
+{
+    Console.WriteLine("Non ci sono film con votazione inferiore a 8");
+}
+
+Dictionary<string, double> mediaPerRegista = MetodiLinq.AveragePerDirector(Films);
+Console.WriteLine("Media dei voti per regista:");
+foreach (var kvp in mediaPerRegista)
+{
+    Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+}
+

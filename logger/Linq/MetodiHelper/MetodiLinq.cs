@@ -78,28 +78,13 @@ namespace Linq.MetodiHelper
         //6)
         //Raggruppa i film per decennio (anni ’70, ’80, ’90, …) e conta quanti film ci sono per decennio.
         //Metodo: Dictionary<int,int> CountByDecade(List<Film> films).
-        //Hint: chiave = Year/10*10.
+        //Hint: chiave = Year/10*10. 
 
         public static Dictionary<int, int> CountByDecade(List<Film> films)
         {
-            var CountByDecade = films.Select(x => x.Year/10*10).GroupBy(x=> x).Count();
-          
-            foreach (var item in films) 
-            {
-                
-                          
-            }
-
-           
-            foreach (var item in films)
-            {
-                int anno = item.Year / 10 * 10;
-                
-            }
-
-
-            
-
+            return films
+                .GroupBy(f => f.Year / 10 * 10)
+                .ToDictionary(g => g.Key, g => g.Count());
         }
     }
 }

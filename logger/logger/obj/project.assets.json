@@ -102,11 +102,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Coros05\\Desktop\\logger\\logger\\logger.csproj",
+      "projectUniqueName": "C:\\Users\\Coros05\\source\\repos\\MasuFede\\Corso3EInformatica\\logger\\logger\\logger.csproj",
       "projectName": "logger",
-      "projectPath": "C:\\Users\\Coros05\\Desktop\\logger\\logger\\logger.csproj",
+      "projectPath": "C:\\Users\\Coros05\\source\\repos\\MasuFede\\Corso3EInformatica\\logger\\logger\\logger.csproj",
       "packagesPath": "C:\\Users\\Coros05\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Coros05\\Desktop\\logger\\logger\\obj\\",
+      "outputPath": "C:\\Users\\Coros05\\source\\repos\\MasuFede\\Corso3EInformatica\\logger\\logger\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
